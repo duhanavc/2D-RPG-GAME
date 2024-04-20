@@ -34,5 +34,10 @@ public class EntityFX : MonoBehaviour
             sr.color = Color.red;
     }
 
+    private void CancelRedBlink()
+    {
+        CancelInvoke(); //bu monobehaviourdaki tüm ýnvoke metotlarýný sonlandýrýyor.
+        sr.color = Color.white;
+    }
 
 }
