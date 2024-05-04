@@ -38,17 +38,24 @@ public class Enemy_Skeleton : Enemy
         if(Input.GetKeyDown(KeyCode.U))
         {
             stateMachine.ChangeState(skeletonStunnedState);
-
         }
-       
+    }
 
+    public override bool CanBeStunned()
+    {
+        if (base.CanBeStunned())
+        {
+            stateMachine.ChangeState(skeletonStunnedState);
+            return true;
+        }
+        return false;
+    
     }
 
 
 
 
-
-
+     
 
 
 

@@ -39,30 +39,28 @@ public class Enemy : Entity
 
     }
 
-    public virtual void OpenAttackWindow() {
+    public virtual void OpenCounterAttackWindow() {
     
         canBeStunned = true;
         counterImage.SetActive(true);
     
     }
-    public virtual void CloseAttackWindow()
+    public virtual void CloseCounterAttackWindow()
     {
         canBeStunned = false;   
         counterImage.SetActive(false);
     }
 
-    /*protected virtual bool CanBeStunned()
+    public virtual bool CanBeStunned()// isimlendirmeyi isStunned yapmak?
     {
         if (canBeStunned)
         {
-
-
-            
+            CloseCounterAttackWindow();
+            return true;
         }
+        return false;        
     }
-    */
-
-
+    
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
     public virtual RaycastHit2D isPlayerDedected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
 

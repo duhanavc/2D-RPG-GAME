@@ -18,7 +18,7 @@ public class SkeletonBattleState : EnemyState
     {
         base.Enter();
 
-        player = GameObject.Find("Player").transform; 
+        player = PlayerManager.instance.player.transform;// GameObject.Find("Player").transform; yerine bunu yazabiliyoruz bu teker teker tüm go lere bakmaktan sisteme daha az yük bindiriyor 
         
     }
     public override void Update()
